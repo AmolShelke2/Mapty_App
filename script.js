@@ -15,11 +15,13 @@ const inputElevation = document.querySelector('.form__input--elevation');
 
 // Using the Geolocation API
 
-navigator.geolocation.getCurrentPosition(
-  function (position) {
-    console.log(position);
-  },
-  function () {
-    alert(`could not get your position`);
-  }
-);
+if (navigator.geolocation) {
+  navigator.geolocation.getCurrentPosition(
+    function (position) {
+      console.log(position);
+    },
+    function () {
+      alert(`could not get your position`);
+    }
+  );
+}
